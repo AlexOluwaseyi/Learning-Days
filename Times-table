@@ -1,0 +1,75 @@
+/* Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int i,j, prod;
+    
+    
+    for (i=0; i<=9; i++)
+    {
+        
+        for (j=0; j<=9; j++)
+        {
+            prod =i;
+            prod *=j;
+            if (j==9)
+            {
+                printf("%d", prod);
+            //    printf(",  ");
+            }else if (prod<10){
+                printf("%d", prod);
+                printf(",  ");
+            }
+            else {
+                printf("%d", prod);
+                printf(", ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i, j, prod;
+    
+    for (i = 0; i <= 9; i++) {
+        for (j = 0; j <= 9; j++) {
+            prod = i;
+            prod *= j;
+            if (i==0){
+                putchar(prod + '0');
+                for (j=0; j<=8;j++){
+                    putchar(',');
+                    putchar(' ');
+                    putchar(' ');
+                    putchar(prod + '0');
+                }
+            }
+            else if (prod == 0)
+                putchar(prod + '0');
+            else if ((prod!=0)&&(prod < 10)){
+                putchar(',');
+                putchar(' ');
+                putchar(' ');
+                putchar(prod + '0');
+
+            } else if (prod>=10){
+                putchar(',');
+                putchar(' ');
+                putchar((prod / 10) + '0');
+                putchar((prod % 10) + '0');
+            }
+        }
+        putchar('\n');
+    }
+
+    return 0;
+}
