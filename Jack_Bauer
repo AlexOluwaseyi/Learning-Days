@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int i,j;
+    
+    for (i=0; i<=23; i++)
+    {
+        for (j=0; j<=59; j++)
+        {
+            if (i<10)
+                printf("0%d",i);
+            else
+                printf("%d", i);
+            putchar(':');
+            if (j<10)
+                printf("0%d",j);
+            else
+                printf("%d",j);
+            putchar('\n');
+        }
+    }
+
+    return 0;
+}
